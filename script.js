@@ -1,10 +1,9 @@
-const key = 'AIzaSyALd9CGeOB6K4RYMyTAHh4IVGygNWtRmSw';
-const cx = '008423077959082289852:jobwqjdo4oc';
+const key = 'AIzaSyCRajoOl2QY5guIlKBggIOCTOhGUagSTPo';
+const cx = '008423077959082289852:1vtwjajtvtg';
 
 window.onload = function() {
     var btn = document.getElementById('searchButton');
     var input = document.getElementById('query');
-
 
 	input.addEventListener('keyup', function (event) {
 		event.preventDefault();
