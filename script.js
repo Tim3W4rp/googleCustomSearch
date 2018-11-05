@@ -15,7 +15,7 @@ window.onload = function() {
     btn.addEventListener('click', function () {
     	clear();
     	doRequest(generateSrc(), function (data) {appendWebResults(data); });
-    	doRequest(generateSrc(true), function(data) {appendImageResults(data) });
+    	doRequest(generateSrc(true), function(data) {appendImageResults(data); });
     });
 };
 
@@ -38,24 +38,17 @@ function doRequest(src, onDataLoaded) {
 	};
 
 	request.onload = function () {
-			if (request.readyState === request.DONE && request.status === 200) {
-				onDataLoaded(JSON.parse(request.response));
-			}
-		};
+		if (request.readyState === request.DONE && request.status === 200) {
+			onDataLoaded(JSON.parse(request.response));
+		}
+	};
 
 	request.send();
 };
 
 function clear() {
-	var rows = document.getElementById('rows');
-	var images = document.getElementById('images');
-
-	while (rows.firstChild) {
-    	rows.removeChild(rows.firstChild);
-	}
-	while (images.firstChild) {
-    	images.removeChild(images.firstChild);
-	}
+	document.getElementById('rows').innerHTML = "";
+	document.getElementById('images').innerHTML = "";
 };
 
 function appendWebResults(response) {
