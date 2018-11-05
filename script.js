@@ -4,6 +4,7 @@ const cx = '008423077959082289852:1vtwjajtvtg';
 window.onload = function() {
 	var btn = document.getElementById('searchButton');
 	var input = document.getElementById('query');
+	var logo = document.getElementById('googleLogo');
 
 	input.addEventListener('keyup', function (event) {
 		event.preventDefault();
@@ -17,6 +18,9 @@ window.onload = function() {
     	doRequest(generateSrc(), function (data) {appendResults(data); });
     	doRequest(generateSrc(true), function(data) {appendResults(data, true); });
     });
+
+    logo.addEventListener('click', function() { window.location.href = "index.html"});
+
 };
 
 function generateSrc(isImageSearch = false) {
